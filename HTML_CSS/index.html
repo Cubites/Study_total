@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        .mainbox{
+            width: 300px;
+            height: 300px;
+            background-color: #ddd;
+        }
+        .box{
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+            background-color: gray;
+            display: block;
+        }
+        .btn{
+            width: 100px;
+            height: 30px;
+            background-color: #333;
+            color: #fff;
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="btn1" class="btn">inline</div>
+    <div class="mainbox">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <script>
+        const inline = document.getElementById("btn1");
+        const box = document.getElementsByClassName("box");
+        inline.addEventListener('mouseover', () => {
+            for(let i = 0; i < 3; i++){
+                box[i].style.display = "inline";
+            }
+        });
+    </script>
+</body>
+</html>

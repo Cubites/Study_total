@@ -1,5 +1,4 @@
 const express = require('express');
-const http = require('http');
 const app = express();
 
 // 포트번호 지정
@@ -13,6 +12,6 @@ app.use((req, res, next) => {
 });
 
 // 서버 생성
-http.createServer(app).listen(app.get('port'), function(){
+app.listen(app.get('port'), function(){
     console.log(`익스프레스 웹 서버가 ${app.get('port')}번 포트로 실행되었습니다.`);
 });

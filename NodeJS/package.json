@@ -15,7 +15,9 @@
     "n3": "nodemon node3_file_open",
     "n4": "nodemon node4_file_write",
     "n5": "nodemon node5_express",
-    "n6": "nodemon node6_winston_test"
+    "n6": "nodemon node6_winston_test",
+    "n7": "nodemon node7_router",
+    "n8": "nodemon node7_bcrypt"
   },
   "keywords": [],
   "author": "",

@@ -1,10 +1,7 @@
-var arr = [1, 2, 3, 4];
+const qs = require('qs');
+const queryString = require('query-string');
 
-console.log(arr);
-arr.push(5);
-console.log(arr);
+let d = "foo[0]=1&foo[1]=2&foo[3]=3";
 
-var obj = {};
-console.log(obj);
-obj.a = 1;
-console.log(obj);
+console.dir(qs.parse(d));
+console.dir(queryString.parse(d));

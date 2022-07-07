@@ -4,6 +4,7 @@ const app = express();
 
 app.set('port', 4000);
 
+// querystring 과 query-string의 차이
 app.use(bodyParser.urlencoded({extended: false})); // req.query == { array: { first: 'apple', second: 'banana' } }
 // app.use(bodyParser.urlencoded({extended: true}));
 

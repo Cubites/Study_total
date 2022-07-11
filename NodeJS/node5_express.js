@@ -9,7 +9,6 @@ app.set('port', process.env.PORT || 4000);
 // 그외 post 등 http 요청 메서드들이 있음
 app.get('/', (req, res, next) => {
     console.log('<첫 번째 미들웨어 호출>');
-    console.log(req.body);
     res.writeHead(200, {'content-type': 'text/html;charset=utf8'}); // http 메세지 헤더 작성
     res.write('<h1>서버에서 응답<h1>'); // http 메세지 body 작성
     res.end(); // http 메세지 작성 종료
@@ -18,7 +17,6 @@ app.get('/', (req, res, next) => {
 
 app.get('/', (req, res, next) => {
     console.log('<두 번째 미들웨어 호출>');
-    console.log(req.body);
 });
 
 app.listen(app.get('port'), () => {

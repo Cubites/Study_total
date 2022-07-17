@@ -21,13 +21,16 @@
     "n9": "nodemon node9_router",
     "n10": "nodemon node10_move",
     "n11": "nodemon node11_upload",
-    "n12": "nodemon node12_dotenv"
+    "n12": "nodemon node12_dotenv",
+    "start": "cd cookie-parser && npm run start",
+    "n13": "concurrently --kill-others-on-fail \"nodemon node13_cookie-parser\" \"npm run start\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "fs": "^0.0.1-security",
@@ -43,6 +46,7 @@
     "winston-daily-rotate-file": "^4.7.1"
   },
   "devDependencies": {
+    "concurrently": "^7.2.2",
     "nodemon": "^2.0.19"
   }
 }

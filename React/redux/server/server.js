@@ -22,9 +22,16 @@ app.post('/api/users/login', (req, res) => {
                 message: "존재하지 않는 계정입니다."
             });
         }else{
-            user.comparePassword(res.body.password)
+            user.comparePassword(res.body.password, (err, isMatch) => {
+                if(!isMatch){
+                    return res.json({
+                        loginSuccess: false,
+                        message: "아이디 혹은 비밀번호가 맞지 않습니다."
+                    });
+                }
+            });
         }
-    })
+    });
 });
 
 app.listen(app.get('port'), () => {

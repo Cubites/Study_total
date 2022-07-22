@@ -30,8 +30,21 @@ app.post('/api/users/login', (req, res) => {
                     });
                 }
             });
+            user.generateToken((err, user) => {
+                if(err) return res.status(400).send(err);
+
+                res.cookie("x_auth", user.token)
+                    .status(200)
+                    .json({loginSuccess: true, userId: user._id});
+            });
         }
     });
+});
+
+app.get('/api/users/auth', auth, (req, res) => {
+    res.status(200, json({
+        _id: req.user._id
+    }));
 });
 
 app.listen(app.get('port'), () => {
